@@ -1,0 +1,450 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FirstGig — Land Your First Freelance Client</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">🚀</span>
+                <span class="logo-text">First<span class="logo-highlight">Gig</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#generator" class="nav-link">Generator</a>
+                <a href="#tracker" class="nav-link">Tracker</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-api-key" id="apiKeyBtn">
+                    <span class="key-icon">🔑</span>
+                    <span id="apiKeyStatus">Set API Key</span>
+                </button>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#generator" class="mobile-link">Generator</a>
+            <a href="#tracker" class="mobile-link">Tracker</a>
+            <a href="#how-it-works" class="mobile-link">How It Works</a>
+            <button class="btn-api-key mobile-api-btn" id="mobileApiKeyBtn">
+                <span class="key-icon">🔑</span> Set API Key
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-badge">
+                <span>✨</span> Built for beginners who are tired of being ignored
+            </div>
+            <h1 class="hero-title">
+                Stop Competing.<br>
+                <span class="gradient-text">Start Reaching Out.</span>
+            </h1>
+            <p class="hero-subtitle">
+                AI-powered cold outreach generator that helps beginner freelancers 
+                find the right clients and write messages that actually get replies. 
+                No portfolio needed. No reviews needed. Just your skills.
+            </p>
+            <div class="hero-cta">
+                <a href="#generator" class="btn btn-primary btn-lg">
+                    Generate Your First Pitch
+                    <span class="btn-arrow">→</span>
+                </a>
+                <a href="#how-it-works" class="btn btn-secondary btn-lg">
+                    See How It Works
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Reviews Needed</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Platform Fees</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Potential Clients</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-glow"></div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">How It Works</span>
+                <h2 class="section-title">Three steps to your first client</h2>
+                <p class="section-subtitle">No experience required. No platform politics. Just direct outreach.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">🎯</div>
+                    <h3>Enter Your Skills</h3>
+                    <p>Tell us what you're good at and a little about yourself. We'll figure out the rest.</p>
+                </div>
+                <div class="step-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-dot"></div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">🔍</div>
+                    <h3>Find Ideal Clients</h3>
+                    <p>AI identifies the exact types of founders and startups who need your skills right now.</p>
+                </div>
+                <div class="step-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-dot"></div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">✉️</div>
+                    <h3>Get Your Pitch</h3>
+                    <p>Receive a personalized, professional cold outreach message ready to send.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ GENERATOR ============ -->
+    <section class="generator" id="generator">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">AI Generator</span>
+                <h2 class="section-title">Build your outreach</h2>
+                <p class="section-subtitle">Fill in your details and let AI craft your perfect pitch.</p>
+            </div>
+
+            <div class="generator-layout">
+                <!-- Input Panel -->
+                <div class="generator-input-panel">
+                    <div class="panel-card">
+                        <div class="panel-header">
+                            <h3>📝 Your Details</h3>
+                            <p>Tell us about yourself</p>
+                        </div>
+
+                        <form id="outreachForm">
+                            <!-- Name -->
+                            <div class="form-group">
+                                <label for="userName">Your Name</label>
+                                <input 
+                                    type="text" 
+                                    id="userName" 
+                                    placeholder="e.g., Alex Johnson"
+                                    required
+                                >
+                            </div>
+
+                            <!-- Skills -->
+                            <div class="form-group">
+                                <label for="userSkills">Your Skills</label>
+                                <div class="skill-input-wrapper">
+                                    <input 
+                                        type="text" 
+                                        id="skillInput" 
+                                        placeholder="Type a skill and press Enter"
+                                    >
+                                    <button type="button" class="btn-add-skill" id="addSkillBtn">+</button>
+                                </div>
+                                <div class="skill-tags" id="skillTags"></div>
+                                <div class="skill-suggestions">
+                                    <span class="suggestion-label">Popular:</span>
+                                    <button type="button" class="skill-suggestion" data-skill="Web Development">Web Development</button>
+                                    <button type="button" class="skill-suggestion" data-skill="Graphic Design">Graphic Design</button>
+                                    <button type="button" class="skill-suggestion" data-skill="Content Writing">Content Writing</button>
+                                    <button type="button" class="skill-suggestion" data-skill="Video Editing">Video Editing</button>
+                                    <button type="button" class="skill-suggestion" data-skill="Social Media">Social Media</button>
+                                    <button type="button" class="skill-suggestion" data-skill="UI/UX Design">UI/UX Design</button>
+                                    <button type="button" class="skill-suggestion" data-skill="SEO">SEO</button>
+                                    <button type="button" class="skill-suggestion" data-skill="Data Entry">Data Entry</button>
+                                    <button type="button" class="skill-suggestion" data-skill="Python">Python</button>
+                                    <button type="button" class="skill-suggestion" data-skill="React">React</button>
+                                </div>
+                                <input type="hidden" id="userSkills" required>
+                            </div>
+
+                            <!-- Bio -->
+                            <div class="form-group">
+                                <label for="userBio">Short Bio</label>
+                                <textarea 
+                                    id="userBio" 
+                                    rows="3" 
+                                    placeholder="Tell us a bit about yourself. e.g., I'm a college student studying CS who loves building clean websites. I've done projects for my university club and friends."
+                                    required
+                                ></textarea>
+                                <span class="char-count"><span id="bioCharCount">0</span>/300</span>
+                            </div>
+
+                            <!-- Target Industry -->
+                            <div class="form-group">
+                                <label for="targetIndustry">Target Industry <span class="optional">(optional)</span></label>
+                                <select id="targetIndustry">
+                                    <option value="">Let AI decide the best fit</option>
+                                    <option value="SaaS Startups">SaaS Startups</option>
+                                    <option value="E-commerce">E-commerce</option>
+                                    <option value="Local Businesses">Local Businesses</option>
+                                    <option value="Creators & Influencers">Creators & Influencers</option>
+                                    <option value="Agencies">Agencies</option>
+                                    <option value="Health & Wellness">Health & Wellness</option>
+                                    <option value="Education">Education</option>
+                                    <option value="Real Estate">Real Estate</option>
+                                    <option value="Food & Restaurant">Food & Restaurant</option>
+                                    <option value="Tech Startups">Tech Startups</option>
+                                    <option value="Non-Profit">Non-Profit</option>
+                                </select>
+                            </div>
+
+                            <!-- Outreach Type -->
+                            <div class="form-group">
+                                <label>Outreach Type</label>
+                                <div class="radio-group">
+                                    <label class="radio-card">
+                                        <input type="radio" name="outreachType" value="email" checked>
+                                        <div class="radio-content">
+                                            <span class="radio-icon">📧</span>
+                                            <span>Cold Email</span>
+                                        </div>
+                                    </label>
+                                    <label class="radio-card">
+                                        <input type="radio" name="outreachType" value="linkedin">
+                                        <div class="radio-content">
+                                            <span class="radio-icon">💼</span>
+                                            <span>LinkedIn DM</span>
+                                        </div>
+                                    </label>
+                                    <label class="radio-card">
+                                        <input type="radio" name="outreachType" value="twitter">
+                                        <div class="radio-content">
+                                            <span class="radio-icon">🐦</span>
+                                            <span>Twitter DM</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Tone -->
+                            <div class="form-group">
+                                <label for="tonePref">Tone Preference</label>
+                                <select id="tonePref">
+                                    <option value="professional-friendly">Professional & Friendly</option>
+                                    <option value="casual-confident">Casual & Confident</option>
+                                    <option value="formal">Formal</option>
+                                    <option value="enthusiastic">Enthusiastic & Energetic</option>
+                                </select>
+                            </div>
+
+                            <!-- Generate Button -->
+                            <button type="submit" class="btn btn-primary btn-generate" id="generateBtn">
+                                <span class="btn-text">
+                                    <span class="btn-icon">⚡</span>
+                                    Generate My Outreach
+                                </span>
+                                <span class="btn-loading" style="display:none;">
+                                    <span class="spinner"></span>
+                                    AI is crafting your pitch...
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Output Panel -->
+                <div class="generator-output-panel">
+                    <!-- Client Targeting -->
+                    <div class="panel-card output-card" id="clientTargetCard" style="display:none;">
+                        <div class="panel-header">
+                            <h3>🎯 Ideal Client Targets</h3>
+                            <p>AI-identified clients who need your skills</p>
+                        </div>
+                        <div class="client-targets" id="clientTargets">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Generated Message -->
+                    <div class="panel-card output-card" id="messageCard" style="display:none;">
+                        <div class="panel-header">
+                            <h3>✉️ Your Cold Outreach Message</h3>
+                            <div class="message-actions">
+                                <button class="btn-icon-action" id="copyBtn" title="Copy">
+                                    📋 Copy
+                                </button>
+                                <button class="btn-icon-action" id="regenerateBtn" title="Regenerate">
+                                    🔄 New Version
+                                </button>
+                                <button class="btn-icon-action" id="saveToTrackerBtn" title="Save to Tracker">
+                                    💾 Save
+                                </button>
+                            </div>
+                        </div>
+                        <div class="message-output" id="messageOutput">
+                            <!-- Filled by JS -->
+                        </div>
+                        <div class="message-meta" id="messageMeta">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Tips -->
+                    <div class="panel-card output-card" id="tipsCard" style="display:none;">
+                        <div class="panel-header">
+                            <h3>💡 Pro Tips for Sending</h3>
+                        </div>
+                        <div class="tips-list" id="tipsList">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Empty State -->
+                    <div class="empty-state" id="emptyState">
+                        <div class="empty-icon">🎯</div>
+                        <h3>Your outreach will appear here</h3>
+                        <p>Fill in your details on the left and click generate to get AI-powered cold outreach messages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TRACKER ============ -->
+    <section class="tracker-section" id="tracker">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">Outreach Tracker</span>
+                <h2 class="section-title">Track your pitches</h2>
+                <p class="section-subtitle">Keep track of every message you send. Follow up like a pro.</p>
+            </div>
+
+            <!-- Tracker Stats -->
+            <div class="tracker-stats">
+                <div class="tracker-stat-card">
+                    <span class="tracker-stat-icon">📤</span>
+                    <span class="tracker-stat-number" id="totalSent">0</span>
+                    <span class="tracker-stat-label">Total Sent</span>
+                </div>
+                <div class="tracker-stat-card">
+                    <span class="tracker-stat-icon">⏳</span>
+                    <span class="tracker-stat-number" id="totalPending">0</span>
+                    <span class="tracker-stat-label">Awaiting Reply</span>
+                </div>
+                <div class="tracker-stat-card">
+                    <span class="tracker-stat-icon">💬</span>
+                    <span class="tracker-stat-number" id="totalReplied">0</span>
+                    <span class="tracker-stat-label">Replied</span>
+                </div>
+                <div class="tracker-stat-card">
+                    <span class="tracker-stat-icon">🎉</span>
+                    <span class="tracker-stat-number" id="totalConverted">0</span>
+                    <span class="tracker-stat-label">Converted</span>
+                </div>
+            </div>
+
+            <!-- Tracker Table -->
+            <div class="tracker-table-wrapper">
+                <div class="tracker-toolbar">
+                    <div class="tracker-filter">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="sent">Sent</button>
+                        <button class="filter-btn" data-filter="replied">Replied</button>
+                        <button class="filter-btn" data-filter="converted">Converted</button>
+                    </div>
+                    <button class="btn btn-sm btn-outline" id="clearTrackerBtn">
+                        🗑️ Clear All
+                    </button>
+                </div>
+                <div class="tracker-table" id="trackerTable">
+                    <div class="tracker-empty" id="trackerEmpty">
+                        <span class="tracker-empty-icon">📋</span>
+                        <p>No outreach tracked yet. Generate a message and save it here!</p>
+                    </div>
+                    <!-- Tracker rows added by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🚀</span>
+                    <span class="logo-text">First<span class="logo-highlight">Gig</span></span>
+                    <p>Skills first. Experience follows.</p>
+                </div>
+                <div class="footer-info">
+                    <p>Built with ❤️ for beginner freelancers who deserve a chance.</p>
+                    <p class="footer-note">Powered by Claude AI • No data stored on servers • 100% client-side</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FirstGig. Open source project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ API KEY MODAL ============ -->
+    <div class="modal-overlay" id="apiKeyModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>🔑 Set Your Claude API Key</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>FirstGig uses the Claude API to generate your outreach messages. Your API key is stored <strong>only in your browser</strong> and never sent anywhere except directly to Anthropic.</p>
+                <div class="form-group">
+                    <label for="apiKeyInput">Claude API Key</label>
+                    <input 
+                        type="password" 
+                        id="apiKeyInput" 
+                        placeholder="sk-ant-api03-..."
+                    >
+                </div>
+                <div class="api-help">
+                    <p>📌 Get your API key from <a href="https://console.anthropic.com/" target="_blank">console.anthropic.com</a></p>
+                    <p>🔒 Your key stays in localStorage — never leaves your browser except for API calls.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="saveApiKey">Save Key</button>
+                <button class="btn btn-outline" id="removeApiKey">Remove Key</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ TOAST ============ -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script src="js/config.js"></script>
+    <script src="js/clientFinder.js"></script>
+    <script src="js/messageGenerator.js"></script>
+    <script src="js/tracker.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
